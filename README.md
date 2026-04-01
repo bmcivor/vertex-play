@@ -5,3 +5,4 @@ Android app and Google Play delivery pipeline, built against the **vertex-studio
 - **Plan / checklist:** [docs/android-play-pipeline-plan.md](docs/android-play-pipeline-plan.md) — Tracking; optional Taiga/GitHub epics per phase/POC.
 - **P-01 (repo scope):** [docs/scope.md](docs/scope.md)
 - **P-02 (repo boundaries):** [docs/repo-boundaries.md](docs/repo-boundaries.md)
+- **I-01 (app repo baseline):** [docs/i-01-baseline.md](docs/i-01-baseline.md)
