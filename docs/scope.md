@@ -1,25 +1,31 @@
-# vertex-play — repository scope (P-01)
+# Scope
 
-**Status:** Recorded for v1; edit this file if strategy changes.
+**Status:** Active.
 
 ## Decision
 
-**One repo** for the Android app and the automation that builds, signs, and (later) publishes to Google Play from the vertex-studio lab.
+Single repo for the Android/Play pipeline tooling and documentation.
 
 | Area | In this repo |
+|------|--------------|
+| Builder image | `docker/` — Dockerfile for the Android SDK build environment used by Jenkins |
+| Pipeline | Root `Jenkinsfile` — reference pipeline definition for Android app builds |
+| Upload tooling | Play upload config (GPP, fastlane, or scripts) without secrets |
+| Docs | `docs/` — pipeline spec, reference material, POC lab notes |
+
+## Not in this repo
+
+| Area | Where it lives |
 |------|----------------|
-| Application | Gradle `app` module and sources (when added) |
-| CI | Root `Jenkinsfile`, optional shared pipeline snippets |
-| Builder image | `Dockerfile` or `docker/` for the Android SDK image used on Jenkins |
-| Docs | `docs/` including [android-play-pipeline-plan.md](android-play-pipeline-plan.md) |
-| Play tooling | Config in repo **without secrets**; keys in Jenkins only |
+| Android application source | Separate app repos (e.g. a future `vertex-app-*`) |
+| Lab infrastructure (Jenkins, registry, Ansible) | [vertex-studio](../../vertex-studio) |
+| Secrets (keystores, Play API keys) | Jenkins credentials store |
 
 ## Deferred
 
-- **`vertex-play-ci`** separate repo — only if splitting the builder image is worth it.
-- **vertex-studio** — infra only; no application source there.
+- **`vertex-play-ci`** separate repo — only if the builder image needs its own release cadence independent of the pipeline definition.
 
 ## Links
 
-- [android-play-pipeline-plan.md](android-play-pipeline-plan.md)
-- Lab: sibling [vertex-studio](../vertex-studio)
+- [spec.md](spec.md)
+- [repo-boundaries.md](repo-boundaries.md)

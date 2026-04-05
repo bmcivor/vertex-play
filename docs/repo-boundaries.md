@@ -1,33 +1,32 @@
-# Repository boundaries (P-02)
+# Repository Boundaries
 
-What lives where so `vertex-play` and the lab stay unambiguous. See also [scope.md](scope.md).
+What lives where so vertex-play and the lab stay unambiguous.
 
-## `vertex-play` (this repository)
+## vertex-play (this repo)
 
-- Android application source (Gradle `app` module when present).
-- CI: root `Jenkinsfile`, optional shared pipeline snippets.
-- Builder image: `Dockerfile` or `docker/` for the Android SDK image used on Jenkins.
-- Documentation: `docs/` (plan, scope, this file, future `docs/design/` notes).
-- Play delivery **configuration** (e.g. Gradle Play Publisher / fastlane) **without** secrets; signing keys and Play service account JSON stay in **Jenkins credentials** (or your chosen secret store), not in git.
+- Android builder Docker image (`docker/`)
+- Reference `Jenkinsfile` for Android app pipelines
+- Play upload tooling configuration (no secrets)
+- Documentation: spec, reference, POC lab notes
 
-## `vertex-play-ci` (optional, not used in v1)
+## vertex-studio (sibling repo)
 
-- Reserved for a **future** split if the builder image should version and release on its own cadence.
-- Until then, builder Dockerfile lives **in this repo** per [scope.md](scope.md).
+- Lab infrastructure: Ansible playbooks/roles, Jenkins deployment, Docker registry, Tailscale, observability stack
+- Does not contain pipeline definitions or Android tooling
+- vertex-play is added to Jenkins via `jenkins_repos` in vertex-studio inventory
 
-## `vertex-studio` (sibling repo: `../vertex-studio`)
+## App repos (separate)
 
-- **Infrastructure as code** and lab services: Ansible playbooks/roles, Jenkins **deployment**, Docker registry role, Taiga, MkDocs, etc.
-- **Does not** hold the Android app or the `vertex-play` pipeline source.
-- You add `vertex-play` to Jenkins multibranch via `jenkins_repos` and host webhooks as documented there—not in this file.
+- Android application source code, Gradle project, app-specific `Jenkinsfile` (copied/adapted from vertex-play's reference)
+- One repo per app, or a monorepo — vertex-play doesn't dictate app repo structure
 
-## Secrets and inventory
+## Secrets
 
-- **vertex-studio** may hold Ansible Vault for **lab** secrets (e.g. Jenkins admin, PAT for GitHub).
-- **vertex-play** pipeline secrets (keystore, Play API JSON) are **operator-managed** in Jenkins; do not commit them here.
+- Lab secrets (Jenkins admin, GitHub PAT): vertex-studio Ansible Vault
+- Pipeline secrets (upload keystore, Play API JSON): Jenkins credentials store, managed by operator
+- No secrets in any git repo
 
 ## Links
 
-- [scope.md](scope.md) — product/repo scope (P-01)
-- [android-play-pipeline-plan.md](android-play-pipeline-plan.md) — full checklist
-- Lab: [vertex-studio](../vertex-studio)
+- [scope.md](scope.md)
+- [spec.md](spec.md) — pipeline specification
