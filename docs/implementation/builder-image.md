@@ -13,7 +13,7 @@ POC-A does **not** cover signing (POC-B), Play upload (POC-C), the app-pipeline 
 ## What POC-A proves and does not prove
 
 **Proves:**
-- `docker/Dockerfile` builds on the lab Jenkins agent with pinned versions, no `:latest` tags, no host-side Android SDK.
+- `docker/Dockerfile` builds via the Jenkins container (using the host Docker socket) with pinned versions, no `:latest` tags, no host-side Android SDK.
 - The resulting image pushes to `shadowlands:5000` via Jenkins.
 - A container started from that image can clone `github.com/android/architecture-samples` at a pinned commit and run `./gradlew :app:bundleRelease` to completion.
 - The produced artefact is a valid `.aab` (unsigned) that passes a basic structural sanity check.
@@ -51,13 +51,13 @@ All must be true before T1 starts. None are assumed — T0 walks the checklist.
 |---|--------------|----------------|---------------------|
 | P1 | vertex-studio inventory is editable by B and the Jenkins-redeploy workflow is known to work | Dry-run a non-destructive vertex-studio playbook | Stop — resolve in vertex-studio first, not inside POC-A |
 | P2 | Jenkins on `shadowlands:8083` is reachable and healthy | `curl -fsS http://shadowlands:8083/login` | Stop — vertex-studio health issue |
-| P3 | Jenkins has an agent with Docker CLI access (host socket or DinD) | Inspect existing vertex-block / vertex-studio Jenkinsfiles — they already do `docker build` | If absent, resolve in vertex-studio |
-| P4 | The Jenkins agent can push to `shadowlands:5000` without interactive auth | Observe existing pipelines pushing; or a throwaway `docker push` test | If auth is required, record the credential name for use in T3/T4 |
-| P5 | `shadowlands:5000` is reachable from the Jenkins agent | `curl http://shadowlands:5000/v2/` returns `{}` or `200 OK` | Networking issue — fix in vertex-studio |
+| P3 | The Jenkins container can run `docker` commands via the mounted host socket | Inspect existing vertex-block / vertex-studio Jenkinsfiles — they already do `docker build` | If absent, resolve in vertex-studio |
+| P4 | The Jenkins container can push to `shadowlands:5000` without interactive auth | Observe existing pipelines pushing; or a throwaway `docker push` test | If auth is required, record the credential name for use in T3/T4 |
+| P5 | `shadowlands:5000` is reachable from the Jenkins container | `curl http://shadowlands:5000/v2/` returns `{}` or `200 OK` | Networking issue — fix in vertex-studio |
 | P6 | The Jenkins Docker daemon has `shadowlands:5000` in `insecure-registries` if it is plain HTTP | Inspect `/etc/docker/daemon.json` on the Jenkins host, or verify existing pushes work | Add via vertex-studio Ansible, never by editing the host directly |
 | P7 | Shadowlands has at least ~20 GB free disk for SDK + Gradle cache + image layers | `df -h /` on shadowlands | Free space or stop |
 | P8 | Shadowlands has at least ~4 GB free RAM during a Gradle build | `free -h` during an existing build | If tight, proceed but record it in the lab note |
-| P9 | Outbound HTTPS works from the Jenkins agent to `dl.google.com` and `repo1.maven.org` | `curl -fsS https://dl.google.com/android/repository/repository2-1.xml` on the agent | Proxy / DNS — fix in vertex-studio |
+| P9 | Outbound HTTPS works from the Jenkins container to `dl.google.com` and `repo1.maven.org` | `curl -fsS https://dl.google.com/android/repository/repository2-1.xml` from inside the Jenkins container | Proxy / DNS — fix in vertex-studio |
 
 ## Open decisions — resolved at execution (gates G1–G8)
 
@@ -275,7 +275,7 @@ No edits to any Android app repo are part of POC-A. architecture-samples is clon
 | `sdkmanager` license list changes and blocks the unattended install | Low but historically happens | T2 hangs indefinitely | `yes \|` pipe in T2 step 7; fail fast on unexpected prompts |
 | architecture-samples' required JDK/AGP is not "latest stable" and our base image is too new | Medium | G2 conflict | Resolve JDK from the AGP row, not from "latest JDK" — the ordering in T1 enforces this |
 | cmdline-tools download URL format changes silently | Low but happens | T2 step 6 fails | G5 records the exact URL and SHA256; any change forces a deliberate bump |
-| The Jenkins agent's Docker version does not support a Dockerfile feature used in T2 | Low | T6 fails | Keep Dockerfile syntax conservative; no cutting-edge BuildKit features unless confirmed |
+| The lab host's Docker daemon does not support a Dockerfile feature used in T2 | Low | T6 fails | Keep Dockerfile syntax conservative; no cutting-edge BuildKit features unless confirmed |
 | POC-A produces an `.aab` that `bundletool` would reject for Play | Unlikely for unsigned validation | Would need rework in POC-B | `unzip -l` sanity check in T7; full `bundletool validate` is deferred to POC-B |
 | Insecure registry credentials leak into Jenkins build logs | Low | Credential exposure | Never echo `docker login` output; use Jenkins credentials bindings, not inline env vars |
 
