@@ -8,7 +8,7 @@ Each epic is a unit of work that delivers a meaningful slice of the pipeline. Ti
 
 - Ordering: locked
 - Epic files: drafted incrementally as each epic becomes the next ticket-breakdown target
-- Tickets: E1 written (001–004); E2 written (005–010); E3+ not yet written
+- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4+ not yet written
 - POCs: not yet executed
 
 ## Order
@@ -41,7 +41,9 @@ The Android builder Docker image: `docker/Dockerfile` with pinned JDK / SDK / cm
 
 A small Android app at `vertex-play/test-app/`, used as the validation target across POC-A / POC-B / POC-C. Owned by this project so its `applicationId` can be enrolled in Play App Signing. See [ADR-001](decisions/ADR-001-test-app-fixture.md) for rationale.
 
-**Depends on:** Nothing
+**Directory:** [`epics/03-test-app-fixture/`](epics/03-test-app-fixture/epic.md)
+
+**Depends on:** E2 006 (version pins)
 
 ### E4 — Google Play developer enrollment and API access
 
