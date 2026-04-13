@@ -8,7 +8,7 @@ Each epic is a unit of work that delivers a meaningful slice of the pipeline. Ti
 
 - Ordering: locked
 - Epic files: drafted incrementally as each epic becomes the next ticket-breakdown target
-- Tickets: not yet written
+- Tickets: E1 written (001–004); E2+ not yet written
 - POCs: not yet executed
 
 ## Order

@@ -1,6 +1,6 @@
 # E1 — Lab integration and Jenkins onboarding
 
-**Status:** Tickets not yet written.
+**Status:** Tickets written.
 
 ## Purpose
 
@@ -46,4 +46,7 @@ None significant. The vertex-studio inventory format is established, and the Jen
 
 ## Tickets
 
-To be written.
+- [001 — Verify lab prerequisites for Jenkins onboarding](tickets/001-verify-lab-prerequisites.md)
+- [002 — Add vertex-play to vertex-studio jenkins_repos inventory](tickets/002-add-vertex-play-to-jenkins-repos.md)
+- [003 — Redeploy Jenkins and confirm vertex-play discovery](tickets/003-redeploy-jenkins-and-confirm-discovery.md)
+- [004 — (Contingent) Add shadowlands:5000 to Docker insecure-registries](tickets/004-contingent-insecure-registries.md)
