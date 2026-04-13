@@ -8,7 +8,7 @@ Each epic is a unit of work that delivers a meaningful slice of the pipeline. Ti
 
 - Ordering: locked
 - Epic files: drafted incrementally as each epic becomes the next ticket-breakdown target
-- Tickets: E1 written (001–004); E2+ not yet written
+- Tickets: E1 written (001–004); E2 written (005–010); E3+ not yet written
 - POCs: not yet executed
 
 ## Order
@@ -32,6 +32,8 @@ Add vertex-play to vertex-studio's `jenkins_repos` Ansible inventory, redeploy J
 ### E2 — Builder image
 
 The Android builder Docker image: `docker/Dockerfile` with pinned JDK / SDK / cmdline-tools / build-tools, plus a bootstrap `Jenkinsfile` that builds and pushes the image to `shadowlands:5000`. This is POC-A from `spec.md`. The existing plan in [`implementation/builder-image.md`](implementation/builder-image.md) serves as the POC plan for this epic (see [ADR-004](decisions/ADR-004-builder-image-md-retained.md)).
+
+**Directory:** [`epics/02-builder-image/`](epics/02-builder-image/epic.md)
 
 **Depends on:** E1 (for Jenkins-triggered build); E3 (for end-to-end validation)
 
