@@ -8,7 +8,7 @@ Each epic is a unit of work that delivers a meaningful slice of the pipeline. Ti
 
 - Ordering: locked
 - Epic files: drafted incrementally as each epic becomes the next ticket-breakdown target
-- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5+ not yet written
+- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5 written (017–021); E6+ not yet written
 - POCs: not yet executed
 
 ## Order
@@ -55,9 +55,11 @@ Manual long-tail work: Play Console signup, identity verification, GCP project, 
 
 ### E5 — Signing
 
-Upload keystore generation/storage, Jenkins credentials wiring, Gradle signing config in the test app, signed AAB produced inside the builder image. POC-B from `spec.md`. Includes Play App Signing enrollment for the test app's `applicationId` (one-time, irreversible).
+Upload keystore generation/storage, Jenkins credentials wiring, Gradle signing config in the test app, signed AAB produced inside the builder image. POC-B from `spec.md`. Play App Signing is auto-enrolled via E4 015 (new apps auto-enrol since Aug 2021), so no separate enrolment ticket is required.
 
-**Depends on:** E2, E3, parts of E4
+**Directory:** [`epics/05-signing/`](epics/05-signing/epic.md)
+
+**Depends on:** E2 (builder image), E3 012 (test app buildable), E4 015 (Play Console listing)
 
 ### E6 — Play upload tooling
 
