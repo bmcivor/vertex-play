@@ -8,7 +8,7 @@ Each epic is a unit of work that delivers a meaningful slice of the pipeline. Ti
 
 - Ordering: locked
 - Epic files: drafted incrementally as each epic becomes the next ticket-breakdown target
-- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4+ not yet written
+- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5+ not yet written
 - POCs: not yet executed
 
 ## Order
@@ -49,7 +49,9 @@ A small Android app at `vertex-play/test-app/`, used as the validation target ac
 
 Manual long-tail work: Play Console signup, identity verification, GCP project, Play Developer API enabled, service account JSON key, scoped permissions in Play Console. Runs in parallel with everything else. Blocks the Play App Signing step in E5 and all of E6.
 
-**Depends on:** Nothing technical (only external manual processes)
+**Directory:** [`epics/04-play-enrollment/`](epics/04-play-enrollment/epic.md)
+
+**Depends on:** E3 011 (for `applicationId` in the Play Console listing); E1 003 (for Jenkins credential storage). Core manual work (013) depends on nothing technical.
 
 ### E5 — Signing
 
