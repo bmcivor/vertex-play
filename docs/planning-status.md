@@ -11,11 +11,12 @@ Last updated: 2026-04-14
 - ADR-001's validation target change (architecture-samples → test-app) accounted for in E2 tickets: version pins (006) drive the choices, E3 writes the test app to match, E2 validation (009) depends on E3
 - E3 (Test app fixture) epic file and tickets written: 011–012 in `docs/epics/03-test-app-fixture/tickets/`
 - E4 (Play enrollment) epic file and tickets written: 013–016 in `docs/epics/04-play-enrollment/tickets/`
+- E5 (Signing) epic file and tickets written: 017–021 in `docs/epics/05-signing/tickets/`
 
 ## What's next
 
-- E5 (Signing) ticket breakdown — POC-B territory; upload keystore, Gradle signing config, Play App Signing enrollment
-- Then E6 (Play upload), E7 (Reference app pipeline), E8 (Handoff)
+- E6 (Play upload) ticket breakdown — POC-C territory; upload tool choice (GPP/fastlane/raw API), wire into pipeline, upload signed AAB to internal track
+- Then E7 (Reference app pipeline), E8 (Handoff)
 
 ## Key decisions
 
@@ -24,3 +25,5 @@ Last updated: 2026-04-14
 - E2 version pins are chosen from current stable releases rather than derived from an existing project, since the test app (E3) doesn't exist yet — E3 writes to match E2's choices
 - E3 is two tickets: scaffold (011) then verify locally (012) — mirrors E2's "write then prove" pattern (007/008). Small epic because the app is intentionally minimal
 - E4 includes creating the Play Console app listing (015), which supersedes spec.md section 3c's "throwaway app" in line with ADR-001 — uses E3's `applicationId`, not a temporary one
+- E5 does not have a separate Play App Signing enrolment ticket — auto-enrolled at Play Console listing creation (015) since Google made it mandatory for new apps in Aug 2021
+- E5 020 (signing validation) deliberately uses a throwaway Jenkins job, not the reference app-pipeline Jenkinsfile — that's E7's territory. Keeps POC-B scrappy and lessons feed into E7's design
