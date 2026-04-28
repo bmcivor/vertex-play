@@ -8,7 +8,7 @@ Each epic is a unit of work that delivers a meaningful slice of the pipeline. Ti
 
 - Ordering: locked
 - Epic files: drafted incrementally as each epic becomes the next ticket-breakdown target
-- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5 written (017–021); E6+ not yet written
+- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5 written (017–021); E6 written (022–025); E7+ not yet written
 - POCs: not yet executed
 
 ## Order
@@ -64,6 +64,8 @@ Upload keystore generation/storage, Jenkins credentials wiring, Gradle signing c
 ### E6 — Play upload tooling
 
 Decide the upload tool (Gradle Play Publisher, fastlane, or raw Play Developer API), wire it into the pipeline, upload a signed AAB to an internal track. POC-C from `spec.md`. The upload tool choice is a real uncertainty that resolves through the POC, not pre-baked in tickets.
+
+**Directory:** [`epics/06-play-upload/`](epics/06-play-upload/epic.md)
 
 **Depends on:** E5, E4 (fully complete)
 

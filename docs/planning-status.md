@@ -1,6 +1,6 @@
 # Planning status
 
-Last updated: 2026-04-14
+Last updated: 2026-04-28
 
 ## What's done
 
@@ -12,11 +12,13 @@ Last updated: 2026-04-14
 - E3 (Test app fixture) epic file and tickets written: 011–012 in `docs/epics/03-test-app-fixture/tickets/`
 - E4 (Play enrollment) epic file and tickets written: 013–016 in `docs/epics/04-play-enrollment/tickets/`
 - E5 (Signing) epic file and tickets written: 017–021 in `docs/epics/05-signing/tickets/`
+- E6 (Play upload) epic file and tickets written: 022–025 in `docs/epics/06-play-upload/tickets/`
+- ADR-005 written: upload tool choice resolved as Gradle Play Publisher (GPP)
 
 ## What's next
 
-- E6 (Play upload) ticket breakdown — POC-C territory; upload tool choice (GPP/fastlane/raw API), wire into pipeline, upload signed AAB to internal track
-- Then E7 (Reference app pipeline), E8 (Handoff)
+- E7 (Reference app pipeline) ticket breakdown — branch/promotion model, `versionCode` derivation, consumption model (how an app repo consumes vertex-play)
+- Then E8 (Handoff)
 
 ## Key decisions
 
@@ -27,3 +29,5 @@ Last updated: 2026-04-14
 - E4 includes creating the Play Console app listing (015), which supersedes spec.md section 3c's "throwaway app" in line with ADR-001 — uses E3's `applicationId`, not a temporary one
 - E5 does not have a separate Play App Signing enrolment ticket — auto-enrolled at Play Console listing creation (015) since Google made it mandatory for new apps in Aug 2021
 - E5 020 (signing validation) deliberately uses a throwaway Jenkins job, not the reference app-pipeline Jenkinsfile — that's E7's territory. Keeps POC-B scrappy and lessons feed into E7's design
+- E6 upload tool is GPP (`com.github.triplet.play`) — see ADR-005. fastlane and raw API ruled out (Ruby runtime overhead and implementation cost respectively)
+- E6 023/024 follow the same throwaway-job discipline as E5 020 — reference Jenkinsfile is E7's territory
