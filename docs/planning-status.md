@@ -14,11 +14,12 @@ Last updated: 2026-04-28
 - E5 (Signing) epic file and tickets written: 017–021 in `docs/epics/05-signing/tickets/`
 - E6 (Play upload) epic file and tickets written: 022–025 in `docs/epics/06-play-upload/tickets/`
 - ADR-005 written: upload tool choice resolved as Gradle Play Publisher (GPP)
+- E7 (Reference app pipeline) epic file and tickets written: 026–028 in `docs/epics/07-reference-pipeline/tickets/`
+- ADR-006 written: consumption model resolved as copy-paste (@Library deferred)
 
 ## What's next
 
-- E7 (Reference app pipeline) ticket breakdown — branch/promotion model, `versionCode` derivation, consumption model (how an app repo consumes vertex-play)
-- Then E8 (Handoff)
+- E8 (Handoff) ticket breakdown — adoption doc, README/spec updates, lessons learned
 
 ## Key decisions
 
@@ -31,3 +32,5 @@ Last updated: 2026-04-28
 - E5 020 (signing validation) deliberately uses a throwaway Jenkins job, not the reference app-pipeline Jenkinsfile — that's E7's territory. Keeps POC-B scrappy and lessons feed into E7's design
 - E6 upload tool is GPP (`com.github.triplet.play`) — see ADR-005. fastlane and raw API ruled out (Ruby runtime overhead and implementation cost respectively)
 - E6 023/024 follow the same throwaway-job discipline as E5 020 — reference Jenkinsfile is E7's territory
+- E7 consumption model is copy-paste (ADR-006) — @Library ruled out for lab scale, deferred as future migration path
+- E7 versionCode uses Jenkins BUILD_NUMBER — monotonically increasing, no per-release discipline required

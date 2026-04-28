@@ -8,7 +8,7 @@ Each epic is a unit of work that delivers a meaningful slice of the pipeline. Ti
 
 - Ordering: locked
 - Epic files: drafted incrementally as each epic becomes the next ticket-breakdown target
-- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5 written (017–021); E6 written (022–025); E7+ not yet written
+- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5 written (017–021); E6 written (022–025); E7 written (026–028); E8 not yet written
 - POCs: not yet executed
 
 ## Order
@@ -72,6 +72,8 @@ Decide the upload tool (Gradle Play Publisher, fastlane, or raw Play Developer A
 ### E7 — Reference app pipeline
 
 The reference `Jenkinsfile` that real app repos consume — distinct from the bootstrap `Jenkinsfile` in E2. Includes the branch/promotion model from `spec.md` (PR / main / tag), `versionCode` derivation, and the open question of how an app repo actually consumes vertex-play (copy-paste, Jenkins shared library, `@Library`). The consumption-model question is the second real uncertainty in the project and likely needs its own POC.
+
+**Directory:** [`epics/07-reference-pipeline/`](epics/07-reference-pipeline/epic.md)
 
 **Depends on:** Lessons from E2, E5, E6
 
