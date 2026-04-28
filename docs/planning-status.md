@@ -16,10 +16,11 @@ Last updated: 2026-04-28
 - ADR-005 written: upload tool choice resolved as Gradle Play Publisher (GPP)
 - E7 (Reference app pipeline) epic file and tickets written: 026–028 in `docs/epics/07-reference-pipeline/tickets/`
 - ADR-006 written: consumption model resolved as copy-paste (@Library deferred)
+- E8 (Handoff) epic file and tickets written: 029–031 in `docs/epics/08-handoff/tickets/`
 
 ## What's next
 
-- E8 (Handoff) ticket breakdown — adoption doc, README/spec updates, lessons learned
+- Planning complete. All 8 epics and 31 tickets written. Execute E1 to begin.
 
 ## Key decisions
 

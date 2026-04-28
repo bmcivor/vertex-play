@@ -8,7 +8,7 @@ Each epic is a unit of work that delivers a meaningful slice of the pipeline. Ti
 
 - Ordering: locked
 - Epic files: drafted incrementally as each epic becomes the next ticket-breakdown target
-- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5 written (017–021); E6 written (022–025); E7 written (026–028); E8 not yet written
+- Tickets: E1 written (001–004); E2 written (005–010); E3 written (011–012); E4 written (013–016); E5 written (017–021); E6 written (022–025); E7 written (026–028); E8 written (029–031)
 - POCs: not yet executed
 
 ## Order
@@ -80,5 +80,7 @@ The reference `Jenkinsfile` that real app repos consume — distinct from the bo
 ### E8 — Handoff and documentation
 
 Short "how to adopt vertex-play in an app repo" doc, updates to `README.md` and `spec.md` if any pre-project assumptions turned out wrong, lessons learned. Likely also where an eventual mkdocs setup for vertex-play lives, matching vertex-studio's setup.
+
+**Directory:** [`epics/08-handoff/`](epics/08-handoff/epic.md)
 
 **Depends on:** Everything else
