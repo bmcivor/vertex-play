@@ -11,12 +11,13 @@
 - P7 confirmed: shadowlands has at least ~20 GB free disk for SDK + Gradle cache + image layers (`df -h /`)
 - P8 confirmed: shadowlands has at least ~4 GB free RAM during a build (`free -h` during an existing build, or idle baseline if no build is running)
 - P9 confirmed: outbound HTTPS works from the Jenkins container to `dl.google.com` and `repo1.maven.org` (`curl -fsS https://dl.google.com/android/repository/repository2-1.xml` from inside the Jenkins container)
+- P10 confirmed: the `docker-workflow` Jenkins plugin (Docker Pipeline plugin) is installed — check Jenkins → Manage Jenkins → Plugins → Installed. This plugin is required for `agent { docker { ... } }` in the reference Jenkinsfile (E7). If absent, add `docker-workflow` to `plugins.txt` in vertex-studio and redeploy Jenkins before E7.
 - Each prerequisite is recorded as green or red
 - If any prerequisite is red, an explicit stop-or-fix decision is made before proceeding
 
 ### Scope boundary
 
-E1 ticket 001 covered P1–P6 (Jenkins, Docker socket, registry). This ticket covers the remaining P7–P9 (lab capacity and network) from [`builder-image.md`](../../../implementation/builder-image.md).
+E1 ticket 001 covered P1–P6 (Jenkins, Docker socket, registry). This ticket covers the remaining P7–P10 (lab capacity, network, and Docker Pipeline plugin) from [`builder-image.md`](../../../implementation/builder-image.md).
 
 ### Dependencies
 
