@@ -1,6 +1,9 @@
-## 21. Write POC-B lab note
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E5 — Signing
+## 21. Write POC-B lab note
 
 **As a** pipeline developer
 **I want** POC-B documented as a lab note

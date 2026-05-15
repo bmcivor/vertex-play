@@ -1,6 +1,9 @@
-## 20. End-to-end signing validation (POC-B)
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E5 — Signing
+## 20. End-to-end signing validation (POC-B)
 
 **As a** pipeline developer
 **I want** a signed release AAB produced by the builder image using Jenkins-injected credentials

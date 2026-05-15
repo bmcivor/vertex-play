@@ -1,6 +1,9 @@
-## 4. (Contingent) Add shadowlands:5000 to Docker insecure-registries
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E1 — Lab integration and Jenkins onboarding
+## 4. (Contingent) Add shadowlands:5000 to Docker insecure-registries
 
 **As a** pipeline developer
 **I want** the Docker daemon configured to push to `shadowlands:5000` over plain HTTP

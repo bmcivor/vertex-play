@@ -1,6 +1,9 @@
-## 9. End-to-end validation: build test app inside image
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E2 — Builder image
+## 9. End-to-end validation: build test app inside image
 
 **As a** pipeline developer
 **I want** to build the test app inside the builder image and produce an unsigned AAB
@@ -8,7 +11,7 @@
 
 ### Context
 
-Maps to T7 from [`builder-image.md`](../../../implementation/builder-image.md), adapted per ADR-001: uses `test-app/` from E3 instead of `android/architecture-samples`.
+Maps to T7 from `builder-image.md`, adapted per ADR-001: uses `test-app/` from E3 instead of `android/architecture-samples`.
 
 ### Acceptance criteria
 

@@ -1,6 +1,9 @@
-## 26. Write reference Jenkinsfile
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E7 — Reference app pipeline
+## 26. Write reference Jenkinsfile
 
 **As a** pipeline developer
 **I want** a reference `Jenkinsfile` at the root of vertex-play

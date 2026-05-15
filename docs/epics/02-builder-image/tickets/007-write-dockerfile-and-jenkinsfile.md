@@ -1,6 +1,9 @@
-## 7. Write Dockerfile and bootstrap Jenkinsfile
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E2 — Builder image
+## 7. Write Dockerfile and bootstrap Jenkinsfile
 
 **As a** pipeline developer
 **I want** the builder image Dockerfile and its bootstrap Jenkinsfile committed on a working branch
@@ -8,7 +11,7 @@
 
 ### Context
 
-Combines T2 (Dockerfile) and T3 (Jenkinsfile) from [`builder-image.md`](../../../implementation/builder-image.md). Both artefacts land on the same branch and are tightly coupled — the Jenkinsfile builds and pushes the image defined by the Dockerfile.
+Combines T2 (Dockerfile) and T3 (Jenkinsfile) from `builder-image.md`. Both artefacts land on the same branch and are tightly coupled — the Jenkinsfile builds and pushes the image defined by the Dockerfile.
 
 **Scope reminder:** the bootstrap Jenkinsfile builds vertex-play's own builder image. It is **not** the reference app-pipeline Jenkinsfile from spec.md section 2. Two different files, two different purposes.
 

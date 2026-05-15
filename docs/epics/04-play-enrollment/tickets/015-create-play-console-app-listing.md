@@ -1,6 +1,9 @@
-## 15. Create test app listing in Play Console
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E4 — Google Play developer enrollment and API access
+## 15. Create test app listing in Play Console
 
 **As a** pipeline owner
 **I want** the test app registered in Play Console with its `applicationId`

@@ -1,6 +1,9 @@
-## 24. Trigger upload and verify AAB in Play Console (POC-C)
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E6 — Play upload tooling
+## 24. Trigger upload and verify AAB in Play Console (POC-C)
 
 **As a** pipeline developer
 **I want** a signed AAB successfully uploaded to the Play Console internal track

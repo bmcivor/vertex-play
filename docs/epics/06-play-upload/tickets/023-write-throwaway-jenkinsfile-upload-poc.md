@@ -1,6 +1,9 @@
-## 23. Write throwaway Jenkinsfile for upload POC
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E6 — Play upload tooling
+## 23. Write throwaway Jenkinsfile for upload POC
 
 **As a** pipeline developer
 **I want** a throwaway Jenkinsfile that signs and uploads the test app AAB

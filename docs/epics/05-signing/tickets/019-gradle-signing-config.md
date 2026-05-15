@@ -1,6 +1,9 @@
-## 19. Add Gradle signing config to test app
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E5 — Signing
+## 19. Add Gradle signing config to test app
 
 **As a** pipeline developer
 **I want** the test app's `build.gradle.kts` configured to sign release builds from env vars

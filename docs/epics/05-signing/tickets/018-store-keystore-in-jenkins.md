@@ -1,6 +1,9 @@
-## 18. Store keystore and passwords in Jenkins credentials
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E5 — Signing
+## 18. Store keystore and passwords in Jenkins credentials
 
 **As a** pipeline developer
 **I want** the upload keystore and its passwords stored as Jenkins credentials

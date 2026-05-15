@@ -1,6 +1,9 @@
-## 28. Write E7 lab note
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E7 — Reference app pipeline
+## 28. Write E7 lab note
 
 **As a** pipeline developer
 **I want** E7 documented as a lab note

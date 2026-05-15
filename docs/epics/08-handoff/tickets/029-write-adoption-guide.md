@@ -1,6 +1,9 @@
-## 29. Write adoption guide
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E8 — Handoff and documentation
+## 29. Write adoption guide
 
 **As a** pipeline developer
 **I want** a concise adoption guide for vertex-play

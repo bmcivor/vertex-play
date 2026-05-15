@@ -1,6 +1,9 @@
-## 2. Add vertex-play to vertex-studio jenkins_repos inventory
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E1 — Lab integration and Jenkins onboarding
+## 2. Add vertex-play to vertex-studio jenkins_repos inventory
 
 **As a** pipeline developer
 **I want** vertex-play added to the vertex-studio Ansible inventory that drives Jenkins job creation

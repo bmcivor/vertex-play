@@ -1,6 +1,9 @@
-## 12. Verify local build produces release AAB
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E3 — Test app fixture
+## 12. Verify local build produces release AAB
 
 **As a** pipeline developer
 **I want** to confirm the test app builds a valid release AAB on my dev machine
@@ -23,7 +26,7 @@ The checks here deliberately mirror what 009 will run, so a pass here means 009 
 ### Failure modes
 
 - **Gradle wrapper download fails:** network or proxy issue on dev machine — not an app problem, retry or check connectivity
-- **AGP/Gradle version incompatibility:** wrong Gradle wrapper version for the AGP pin from E2 006 — update `gradle-wrapper.properties` to a compatible version (check the [AGP release notes](https://developer.android.com/build/releases/gradle-plugin) for the compatibility table)
+- **AGP/Gradle version incompatibility:** wrong Gradle wrapper version for the AGP pin from E2 006 — update `gradle-wrapper.properties` to a compatible version (check the AGP release notes for the compatibility table)
 - **compileSdk not installed locally:** `sdkmanager` on dev machine may not have the platform — install it locally or note that this is expected to work only in the builder image (but local verification is preferred)
 - **Missing `android.useAndroidX` or similar property:** add to `gradle.properties` in 011
 

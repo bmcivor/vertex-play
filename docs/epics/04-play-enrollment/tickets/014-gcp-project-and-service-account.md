@@ -1,6 +1,9 @@
-## 14. Set up GCP project and service account for Play API
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E4 — Google Play developer enrollment and API access
+## 14. Set up GCP project and service account for Play API
 
 **As a** pipeline owner
 **I want** a GCP project with the Play Developer API enabled and a service account JSON key
