@@ -1,6 +1,9 @@
-## 10. Write POC-A lab note
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E2 — Builder image
+## 10. Write POC-A lab note
 
 **As a** pipeline developer
 **I want** POC-A's results captured in a structured lab note
@@ -8,7 +11,7 @@
 
 ### Context
 
-Maps to T8 from [`builder-image.md`](../../../implementation/builder-image.md). This is the final ticket in E2.
+Maps to T8 from `builder-image.md`. This is the final ticket in E2.
 
 ### Acceptance criteria
 

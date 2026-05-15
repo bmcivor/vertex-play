@@ -1,6 +1,9 @@
-## 22. Add GPP to test app Gradle config
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E6 — Play upload tooling
+## 22. Add GPP to test app Gradle config
 
 **As a** pipeline developer
 **I want** Gradle Play Publisher configured in the test app

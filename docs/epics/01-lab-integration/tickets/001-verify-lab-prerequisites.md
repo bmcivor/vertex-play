@@ -1,6 +1,9 @@
-## 1. Verify lab prerequisites for Jenkins onboarding
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E1 — Lab integration and Jenkins onboarding
+## 1. Verify lab prerequisites for Jenkins onboarding
 
 **As a** pipeline developer
 **I want** to verify that the lab infrastructure supports adding a new repo to Jenkins

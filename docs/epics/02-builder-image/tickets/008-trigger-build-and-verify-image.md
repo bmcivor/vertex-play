@@ -1,6 +1,9 @@
-## 8. Trigger Jenkins build and verify image in registry
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E2 — Builder image
+## 8. Trigger Jenkins build and verify image in registry
 
 **As a** pipeline developer
 **I want** Jenkins to build and push the builder image from the working branch
@@ -8,7 +11,7 @@
 
 ### Context
 
-Maps to T6 from [`builder-image.md`](../../../implementation/builder-image.md). This is the first time vertex-play's Jenkinsfile runs in the lab.
+Maps to T6 from `builder-image.md`. This is the first time vertex-play's Jenkinsfile runs in the lab.
 
 ### Acceptance criteria
 

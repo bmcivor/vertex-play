@@ -1,6 +1,9 @@
-## 31. mkdocs setup (optional)
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E8 — Handoff and documentation
+## 31. mkdocs setup (optional)
 
 **As a** pipeline developer
 **I want** vertex-play's docs served via mkdocs

@@ -1,6 +1,9 @@
-## 16. Store Play API credentials in Jenkins
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E4 — Google Play developer enrollment and API access
+## 16. Store Play API credentials in Jenkins
 
 **As a** pipeline developer
 **I want** the Play Developer API service account JSON stored as a Jenkins secret file credential

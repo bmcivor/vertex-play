@@ -1,6 +1,9 @@
-## 30. Update README.md and spec.md
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E8 — Handoff and documentation
+## 30. Update README.md and spec.md
 
 **As a** pipeline developer
 **I want** README.md and spec.md to reflect the final state of the project

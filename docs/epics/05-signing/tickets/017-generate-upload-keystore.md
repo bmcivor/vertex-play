@@ -1,6 +1,9 @@
-## 17. Generate upload keystore
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E5 — Signing
+## 17. Generate upload keystore
 
 **As a** pipeline owner
 **I want** a fresh upload keystore for the test app

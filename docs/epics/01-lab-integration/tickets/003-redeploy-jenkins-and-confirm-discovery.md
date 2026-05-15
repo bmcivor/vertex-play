@@ -1,6 +1,9 @@
-## 3. Redeploy Jenkins and confirm vertex-play discovery
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E1 — Lab integration and Jenkins onboarding
+## 3. Redeploy Jenkins and confirm vertex-play discovery
 
 **As a** pipeline developer
 **I want** Jenkins redeployed with the updated inventory and vertex-play confirmed as a multibranch project

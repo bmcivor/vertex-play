@@ -1,6 +1,9 @@
-## 25. Write POC-C lab note
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E6 — Play upload tooling
+## 25. Write POC-C lab note
 
 **As a** pipeline developer
 **I want** POC-C documented as a lab note

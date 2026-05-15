@@ -1,6 +1,9 @@
-## 6. Resolve version pins (G1–G8)
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E2 — Builder image
+## 6. Resolve version pins (G1–G8)
 
 **As a** pipeline developer
 **I want** every version used in the builder image resolved to an explicit pin before writing the Dockerfile
@@ -8,7 +11,7 @@
 
 ### Context
 
-This ticket executes gates G1–G8 from [`builder-image.md`](../../../implementation/builder-image.md). ADR-001 changed the validation target from `architecture-samples` to `test-app/`, which doesn't exist yet (E3). Instead of reading versions from an existing project, this ticket **chooses** current stable versions from the AGP/JDK compatibility matrix and Android SDK release channels. E3 writes the test app to match these choices.
+This ticket executes gates G1–G8 from `builder-image.md`. ADR-001 changed the validation target from `architecture-samples` to `test-app/`, which doesn't exist yet (E3). Instead of reading versions from an existing project, this ticket **chooses** current stable versions from the AGP/JDK compatibility matrix and Android SDK release channels. E3 writes the test app to match these choices.
 
 ### Acceptance criteria
 

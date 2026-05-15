@@ -1,6 +1,9 @@
-## 27. End-to-end validation of all three triggers
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E7 — Reference app pipeline
+## 27. End-to-end validation of all three triggers
 
 **As a** pipeline developer
 **I want** all three branch triggers validated against the test app

@@ -1,6 +1,9 @@
-## 11. Scaffold test app project
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E3 — Test app fixture
+## 11. Scaffold test app project
 
 **As a** pipeline developer
 **I want** a minimal Android app project at `test-app/` with version pins matching E2 006
@@ -8,7 +11,7 @@
 
 ### Context
 
-This app exists solely for pipeline validation — it is the exception to the "no Android source in vertex-play" rule (see [ADR-001](../../../../decisions/ADR-001-test-app-fixture.md)). It must own its own `applicationId` because Play App Signing enrollment is one-time and irreversible per ID.
+This app exists solely for pipeline validation — it is the exception to the "no Android source in vertex-play" rule (see ADR-001). It must own its own `applicationId` because Play App Signing enrollment is one-time and irreversible per ID.
 
 The AGP, compileSdk, targetSdk, and build-tools versions are not chosen here — they come from E2 ticket 006. This ticket consumes those values.
 

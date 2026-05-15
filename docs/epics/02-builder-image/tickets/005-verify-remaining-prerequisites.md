@@ -1,6 +1,9 @@
-## 5. Verify remaining lab prerequisites (P7–P9)
+---
+type: story
+project: vertex-play
+---
 
-**Epic:** E2 — Builder image
+## 5. Verify remaining lab prerequisites (P7–P9)
 
 **As a** pipeline developer
 **I want** to confirm the lab has sufficient disk, RAM, and outbound network access for Android builds
@@ -17,7 +20,7 @@
 
 ### Scope boundary
 
-E1 ticket 001 covered P1–P6 (Jenkins, Docker socket, registry). This ticket covers the remaining P7–P10 (lab capacity, network, and Docker Pipeline plugin) from [`builder-image.md`](../../../implementation/builder-image.md).
+E1 ticket 001 covered P1–P6 (Jenkins, Docker socket, registry). This ticket covers the remaining P7–P10 (lab capacity, network, and Docker Pipeline plugin) from `builder-image.md`.
 
 ### Dependencies
 
