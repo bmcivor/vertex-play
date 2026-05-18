@@ -1,6 +1,7 @@
 ---
 type: story
 project: vertex-play
+status: Done
 ---
 
 ## 3. Redeploy Jenkins and confirm vertex-play discovery
