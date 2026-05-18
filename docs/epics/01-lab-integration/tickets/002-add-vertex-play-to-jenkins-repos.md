@@ -1,6 +1,7 @@
 ---
 type: story
 project: vertex-play
+status: Done
 ---
 
 ## 2. Add vertex-play to vertex-studio jenkins_repos inventory
