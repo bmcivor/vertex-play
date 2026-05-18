@@ -1,6 +1,7 @@
 ---
 type: story
 project: vertex-play
+status: Done
 ---
 
 ## 1. Verify lab prerequisites for Jenkins onboarding
