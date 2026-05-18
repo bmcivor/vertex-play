@@ -1,4 +1,5 @@
 # vertex-play
+test
 
 CI/CD pipeline kit for building, signing, and publishing Android applications to Google Play. Runs on the [vertex-studio](../vertex-studio) lab infrastructure (Jenkins, Docker registry).
 
